@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Bicycle taillight
+PROJECTNAME=BicycleTaillight
 
 # Active Configuration
 DEFAULTCONF=default
