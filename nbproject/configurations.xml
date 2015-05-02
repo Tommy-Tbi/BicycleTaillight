@@ -3,11 +3,17 @@
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <logicalFolder name="HeaderFiles" displayName="include" projectFiles="true">
       <itemPath>init.h</itemPath>
+      <itemPath>Time.h</itemPath>
+      <itemPath>Shake.h</itemPath>
+      <itemPath>Led.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="linker" projectFiles="true">
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="source" projectFiles="true">
       <itemPath>main.c</itemPath>
+      <itemPath>Time.c</itemPath>
+      <itemPath>Shake.c</itemPath>
+      <itemPath>Led.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles" displayName="external" projectFiles="false">
       <itemPath>Makefile</itemPath>

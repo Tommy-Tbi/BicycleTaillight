@@ -34,6 +34,21 @@ extern "C" {
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 
+#define REG_SHAKE_INTERRUPT PORTA
+
+#define SYSTEM_TIMER	
+
+#define SHAKE_SENSOR_TRIS	TRISA4	// Shake Sensor Config I/O
+#define SHAKE_SENSOR_PORT	RA4	// Shake Sensor I/O
+
+#define LED0_RTIS	TRISA0
+#define LED0_PORT	RA0
+#define LED1_RTIS	TRISA1
+#define LED1_PORT	RA1
+#define LED2_RTIS	TRISA2
+#define LED2_PORT	RA2
+
+
 #ifdef	__cplusplus
 }
 #endif
