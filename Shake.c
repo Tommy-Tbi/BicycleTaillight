@@ -22,7 +22,7 @@ void ResetLastShakeTime()
 
 void SetShakeInterrupt(char enable)
 {
-    //REG_SHAKE_INTERRUPT = 0;
+    SHAKE_SENSOR_INTERRUPT = enable;
 }
 
 char GetShakeStatus()

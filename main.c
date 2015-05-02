@@ -21,8 +21,9 @@ void interrupt Interrupt()
 		TMR0 = 61;
 		UpdateSystemTime();
 	}
-	else if(IOCIF)
+	else if(IOCAF4)
 	{
+		IOCAF4 = 0;
 		SetShakeInterrupt(0);
 	}
 	GIE = 1; // 打开总中断
@@ -40,8 +41,10 @@ void Init()
 	InitShake();
 	InitLed();
 
+	SetShakeInterrupt(1);
+	SetSystemTimeInterrupt(1);
+	
 	IOCIE = 1; // 开启IO中断
-	TMR0IE = 1; // 开启Timer0中断
 	GIE = 1; // 开启总中断
 }
 
@@ -60,16 +63,25 @@ int main()
 			
             // 开启震动中断，震动触发中断后，在中断函数中关闭中断
             SetShakeInterrupt(1);
+
+			// 休眠前先关闭定时器中断，防止定时器将CPU唤醒
+			SetSystemTimeInterrupt(0);
             
             // 超时没有震动，进入休眠
             SLEEP();
 
             // 从休眠中唤醒，重置震动定时器
             ResetLastShakeTime();
+
+			// 打开时钟中断
+			SetSystemTimeInterrupt(1);
         }
 
 		// 打开LED
 		SetLedStatus(1);
+
+		if(GetShakeStatus())
+			ResetLastShakeTime();
     }
     return 0;
 }

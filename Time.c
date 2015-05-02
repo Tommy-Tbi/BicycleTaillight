@@ -1,3 +1,4 @@
+#include "init.h"
 #include "Time.h"
 
 static long iSystemTime = 0;
@@ -15,4 +16,9 @@ void UpdateSystemTime()
 long GetSystemTime()
 {
 	return iSystemTime;
+}
+
+void SetSystemTimeInterrupt(char enable)
+{
+	SYSTEM_TIMER_INT = enable;
 }
