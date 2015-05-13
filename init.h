@@ -33,18 +33,20 @@ extern "C" {
 #pragma config BORV = LO        // Brown-out Reset Voltage Selection (Brown-out Reset Voltage (Vbor), low trip point selected.)
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
-#define SYSTEM_TIMER_INT	TMR0IE
+#define SYSTEM_TIMER_INT_ENABLE	INTCONbits.TMR0IE
+#define SYSTEM_TIMER_INT_FLAG	INTCONbits.TMR0IF
 
-#define SHAKE_SENSOR_INTERRUPT	IOCAN4
-#define SHAKE_SENSOR_TRIS		TRISA4	// Shake Sensor Config I/O
-#define SHAKE_SENSOR_PORT		RA4	// Shake Sensor I/O
+#define SHAKE_SENSOR_INT_ENABLE IOCANbits.IOCAN1
+#define SHAKE_SENSOR_INT_FLAG	IOCAFbits.IOCAF1
+#define SHAKE_SENSOR_TRIS		TRISAbits.TRISA1	// Shake Sensor Config I/O
+#define SHAKE_SENSOR_PORT		RA1	// Shake Sensor I/O
 
-#define LED0_RTIS	TRISA0
-#define LED0_PORT	RA0
-#define LED1_RTIS	TRISA1
-#define LED1_PORT	RA1
-#define LED2_RTIS	TRISA2
-#define LED2_PORT	RA2
+#define LED0_RTIS	TRISAbits.TRISA3
+#define LED0_PORT	RA3
+#define LED1_RTIS	TRISAbits.TRISA4
+#define LED1_PORT	RA4
+#define LED2_RTIS	TRISAbits.TRISA5
+#define LED2_PORT	RA5
 
 
 #ifdef	__cplusplus

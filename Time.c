@@ -3,22 +3,18 @@
 
 static long iSystemTime = 0;
 
-void InitSystemTime()
-{
-    iSystemTime = 0;
+void InitSystemTime() {
+	iSystemTime = 0;
 }
 
-void UpdateSystemTime()
-{
+void UpdateSystemTime() {
 	iSystemTime++;
 }
 
-long GetSystemTime()
-{
+long GetSystemTime() {
 	return iSystemTime;
 }
 
-void SetSystemTimeInterrupt(char enable)
-{
-	SYSTEM_TIMER_INT = enable;
+void SetSystemTimeInterrupt(char enable) {
+	SYSTEM_TIMER_INT_ENABLE = enable;
 }
