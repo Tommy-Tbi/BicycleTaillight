@@ -14,7 +14,8 @@ extern "C" {
 
 #include "init.h"
 
-#define SHAKE_DELAY_TIME 100 // 震动延时休眠时间
+#define SHAKE_OFF_TIME	15	// 震动关闭LED延时
+#define SHAKE_ON_TIME	8	// 震动开启LED延时
 
 int GetLastShakeTime();
 void ResetLastShakeTime();

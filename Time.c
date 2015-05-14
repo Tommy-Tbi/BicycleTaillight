@@ -2,13 +2,18 @@
 #include "Time.h"
 
 static long iSystemTime = 0;
+static int iCount = 0;
 
 void InitSystemTime() {
-	iSystemTime = 0;
+	iSystemTime = iCount = 0;
 }
 
 void UpdateSystemTime() {
-	iSystemTime++;
+	if(iCount++ >= TICK)
+	{
+		iSystemTime++;
+		iCount = 0;
+	}
 }
 
 long GetSystemTime() {
