@@ -13,7 +13,9 @@ extern "C" {
 #endif
 
 void InitLed();
-void SetLedStatus(char status);
+void SetLedEnable(uchar enable);
+void SetLedStatus(uchar status);
+uchar GetLedStatus();
 
 
 #ifdef	__cplusplus

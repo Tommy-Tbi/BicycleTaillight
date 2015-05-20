@@ -12,8 +12,27 @@ void InitLed() {
 	LED2_PORT = 1;
 }
 
-void SetLedStatus(char status) {
+// 设置允许点亮LED，1 允许点亮， 0 不允许点亮
+void SetLedEnable(uchar enable)
+{
+	LED2_RTIS = !enable;
+}
+
+// 获取允许点亮LED，1 允许点亮， 0 不允许点亮
+byte GetLedEnable()
+{
+	return !LED2_RTIS;
+}
+
+// 点亮LED，1 点亮， 0 不点亮
+void SetLedStatus(uchar status) {
 	LED0_PORT = status;
 	LED1_PORT = status;
 	LED2_PORT = status;
+}
+
+// 获取LED点亮状态，1 点亮， 0 不点亮
+uchar GetLedStatus()
+{
+	return !LED2_PORT;
 }

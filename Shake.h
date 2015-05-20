@@ -15,12 +15,12 @@ extern "C" {
 #include "init.h"
 
 #define SHAKE_OFF_TIME	15	// 震动关闭LED延时
-#define SHAKE_ON_TIME	8	// 震动开启LED延时
+#define SHAKE_ON_TIME	5	// 震动开启LED延时
 
-int GetLastShakeTime();
+long GetLastShakeTime();
 void ResetLastShakeTime();
-void SetShakeInterrupt(char enable);
-char GetShakeStatus();
+void SetShakeInterrupt(byte enable);
+byte GetShakeStatus();
 
 
 #ifdef	__cplusplus

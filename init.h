@@ -37,6 +37,8 @@ extern "C" {
 #define SYSTEM_TIMER_INT_FLAG	INTCONbits.TMR0IF
 #define SYSTEM_TIMER_INIT		0xCF
 
+#define LUMINANCE_SENSOR_INT_FLAG	PIR1bits.ADIF
+
 #define SHAKE_SENSOR_INT_ENABLE IOCANbits.IOCAN1
 #define SHAKE_SENSOR_INT_FLAG	IOCAFbits.IOCAF1
 #define SHAKE_SENSOR_TRIS		TRISAbits.TRISA1	// Shake Sensor Config I/O
@@ -49,6 +51,11 @@ extern "C" {
 #define LED2_RTIS	TRISAbits.TRISA5
 #define LED2_PORT	RA5
 
+
+#define ulong unsigned long
+#define uint unsigned int
+#define uchar unsigned char
+#define byte char
 
 #ifdef	__cplusplus
 }

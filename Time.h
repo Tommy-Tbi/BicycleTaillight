@@ -17,7 +17,7 @@ extern "C" {
 void InitSystemTime();
 void UpdateSystemTime();
 long GetSystemTime();
-void SetSystemTimeInterrupt(char enable);
+void SetSystemTimeInterrupt(byte enable);
 
 
 #ifdef	__cplusplus
